@@ -15,23 +15,27 @@
  * along with this distribution; if not, see <http://www.gnu.org/licenses/>.
  *
  */
+
 package com.github.myth.admin;
 
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.data.mongo.MongoDataAutoConfiguration;
 import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
 
 /**
+ * MythAdminApplication.
  * @author xiaoyu
  */
-@SpringBootApplication(exclude = {MongoAutoConfiguration.class})
+@SpringBootApplication(exclude = {MongoAutoConfiguration.class, MongoDataAutoConfiguration.class})
 public class MythAdminApplication {
-    public static void main(String[] args) {
+
+    /**
+     * myth admin start.
+     * @param args args
+     */
+    public static void main(final String[] args) {
         SpringApplication.run(MythAdminApplication.class, args);
     }
-
-
 
 }
